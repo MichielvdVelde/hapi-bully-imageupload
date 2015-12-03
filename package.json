@@ -1,0 +1,30 @@
+{
+  "name": "hapi-bully-imageupload",
+  "version": "1.0.0",
+  "description": "Smart image/file upload plugin for Hapi.js",
+  "main": "lib/hapi-bully-imageupload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/MichielvdVelde/hapi-bully-imageupload.git"
+  },
+  "keywords": [
+    "hapijs",
+    "image",
+    "file",
+    "upload",
+    "smart",
+    "hash"
+  ],
+  "author": "Michiel van der Velde <michiel@michielvdvelde.nl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichielvdVelde/hapi-bully-imageupload/issues"
+  },
+  "homepage": "https://github.com/MichielvdVelde/hapi-bully-imageupload#readme",
+  "dependencies": {
+    "digest-stream": "^0.2.2"
+  }
+}
