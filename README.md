@@ -57,12 +57,13 @@ What happens on an upload:
 Route to get the image/file by its hash. A valid path with a sha1 hash would look like this:
 
 ```
-GET /image/hash/29985a9860e6e344c98ecc75467e915ec5d5fb28
+GET /image/29985a9860e6e344c98ecc75467e915ec5d5fb28
 ```
 
 # Version history
 
-* 1.0.0 - 1.0.1 - 3 December 2015
+* 1.0.0 - 1.0.2 - 3 December 2015
+  * (1.0.2) Fixed error in readme
   * (1.0.1) Fixed package.json path in `register.attributes`
   * (1.0.0) I forgot to set the version to 0.0.1, so now 1.0.0 is the latest version
   * (1.0.0) Initial commit
