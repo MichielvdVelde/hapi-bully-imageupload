@@ -62,7 +62,8 @@ GET /image/hash/29985a9860e6e344c98ecc75467e915ec5d5fb28
 
 # Version history
 
-* 0.0.1 - 3 December 2015
+* 1.0.0 - 3 December 2015
+  * I forgot to set the version to 0.0.1, so now 1.0.0 is the latest version
   * Initial commit
 
 ## License
