@@ -56,7 +56,26 @@ What happens on an upload:
  * If there is, unlink the temporary file and send a response containing the file hash
 4. If there isn't, move the file to `uploadPath` and send a response containing the file hash
 
+The reply will be `application/json`.
 
+On failure:
+```json
+{
+  "success": false,
+  "error": "An error message"
+}
+```
+
+On success:
+```json
+{
+  "success": true,
+  "fresh": true,
+  "filename": "29985a9860e6e344c98ecc75467e915ec5d5fb28"
+}
+```
+
+`fresh` is `true` if the file was new, `false`, if the file already existed
 
 ### `GET /image/{hash}`
 
