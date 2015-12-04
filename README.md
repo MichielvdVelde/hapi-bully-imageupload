@@ -21,7 +21,7 @@ You can register the plugin as follows:
 server.register({
 	'register': require('hapi-bully-imageupload'),
 	'options': {
-		'allowedExtensions': [ 'jpg', 'jpeg', 'png' ],
+		'allowedMimeTypes': [ 'image/jpg', 'image/png' ],
 		'uploadPath': process.cwd() + '/uploads/' // Notice the last slash
 	},
 	'routes': {
@@ -31,7 +31,8 @@ server.register({
 ```
 
 `options` can contain the following:
-* `allowedExtensions`: An array containing allowed etensions, e.g. `[ 'jpg', 'jpeg', 'png' ]` (none by default)
+* `allowedExtensions`: An array containing allowed extensions, e.g. `[ 'jpg', 'jpeg', 'png' ]` (none by default)
+* `allowedMimeTypes`: An array containing allowd mime types, e.g. `[ 'image/jpg', 'image/png' ]` (none by default)
 * `hashAlgo`: The hashing algorithm to use. All available in the `crypto` module. Default is `sha1`
 * `tmpPath`: The path to store the temporary files in. Default is `process.cwd() + '/tmp/'`
 * `uploadPath`: The path to store the uploaded files in. Default is `process.cwd() + '/uploads/'`
