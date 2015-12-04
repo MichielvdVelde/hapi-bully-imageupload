@@ -62,6 +62,8 @@ GET /image/29985a9860e6e344c98ecc75467e915ec5d5fb28
 
 # Version history
 
+* 1.0.3 - 4 December 2015
+  * Fixed file path links
 * 1.0.0 - 1.0.2 - 3 December 2015
   * (1.0.2) Fixed error in readme
   * (1.0.1) Fixed package.json path in `register.attributes`

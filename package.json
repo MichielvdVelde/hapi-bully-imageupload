@@ -1,6 +1,6 @@
 {
   "name": "hapi-bully-imageupload",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Smart image/file upload plugin for Hapi.js",
   "main": "lib/hapi-bully-imageupload.js",
   "scripts": {
