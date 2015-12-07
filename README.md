@@ -89,6 +89,8 @@ Because files are stored without their extension, and I have no idea how to retr
 
 # Version history
 
+* 1.2.0 - 7 December 2015
+  * The temporary file is now being stored with a unique UUID, preventing possible collisions in `tmpPath`
 * 1.1.0 - 4 December 2015
   * Updated readme to contain more helpful info
   * Updated status reply messages and added them to the readme
