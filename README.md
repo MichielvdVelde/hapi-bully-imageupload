@@ -35,7 +35,7 @@ server.register({
 * `allowedExtensions`: An array containing allowed extensions, e.g. `[ 'jpg', 'jpeg', 'png' ]` (none by default)
 * `allowedMimeTypes`: An array containing allowd mime types, e.g. `[ 'image/jpg', 'image/png' ]` (none by default)
 * `hashAlgo`: The hashing algorithm to use. All available in the `crypto` module. Default is `sha1`
-* `tmpPath`: The path to store the temporary files in. Default is `process.cwd() + '/tmp/'`
+* `tmpPath`: The path to store the temporary files in. Default is `os.tmpdir()`
 * `uploadPath`: The path to store the uploaded files in. Default is `process.cwd() + '/uploads/'`
 * `maxBytes`: The max allowed file size in bytes. Defaults to `256000` (250kb)
 
@@ -50,7 +50,7 @@ What happens on an upload:
 1. If `allowedExtensions` is set, first check if the extension is allowed
   * If it isn't, send a 400 Bad Request
 2. If `allowedMimeTypes` is set, check if the content-type is allowed
-  * If it isn't, send a 404 Bad Request
+  * If it isn't, send a 400 Bad Request
 2. If it is, store the file to `tmpPath`, in the mean time calculating the digest hash of its contents
 3. Check if there is a file in `uploadPath` with the same hash (the hash is being used as file name)
  * If there is, unlink the temporary file and send a response containing the file hash
@@ -85,10 +85,12 @@ Route to get the image/file by its hash. A valid path with a sha1 hash would loo
 GET /image/29985a9860e6e344c98ecc75467e915ec5d5fb28
 ```
 
-Because files are stored without their extension, and I have no idea how to retrieve the mime type any other way without requiring something like a database (which is not desirable), the `Stream.Readable` of the file is sent directly to `reply()`. IF you know a better way to do this, or if you experience problems because of this, please let me know by creating an issue.
+Because files are stored without their extension, and I have no idea how to retrieve the mime type any other way without requiring something like a database (which is not desirable), the `Stream.Readable` of the file is sent directly to `reply()`. If you know a better way to do this, or if you experience problems because of this, please let me know by creating an issue.
 
 # Version history
 
+* 1.2.1 - 12 January 2016
+  * Changed temporary directory from  `process.cwd() + '/tmp/'` to `os.tmpDir()`
 * 1.2.0 - 7 December 2015
   * The temporary file is now being stored with a unique UUID, preventing possible collisions in `tmpPath`
 * 1.1.0 - 4 December 2015
